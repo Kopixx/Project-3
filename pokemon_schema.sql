@@ -4,40 +4,36 @@
 
 -- Change connection to pokemon_db
 
-DROP TABLE IF EXISTS nameid;
--- DROP TABLE IF EXISTS metadata;
--- DROP TABLE IF EXISTS statistics;
--- DROP TABLE IF EXISTS sprites;
-
-CREATE TABLE nameid(
-			name VARCHAR (255), 
-			order_id INT PRIMARY KEY);
+DROP TABLE IF EXISTS metadata;
+DROP TABLE IF EXISTS statistics;
+DROP TABLE IF EXISTS sprites;
 
 CREATE TABLE metadata (
-			name VARCHAR (255),
-			order_id INT NOT NULL,
-			FOREIGN KEY(order_id) REFERENCES nameid(order_id),
+			name VARCHAR (255) NOT NULL,
+			order_id INT PRIMARY KEY,
 			weight INT,
-			abilities VARCHAR (255),
-			types VARCHAR (255));
+			type_1 VARCHAR (255) NOT NULL);
 
 CREATE TABLE statistics(
 			name VARCHAR (255),
 			order_id INT NOT NULL,
-			FOREIGN KEY(order_id) REFERENCES nameid(order_id),
-			stats_name VARCHAR (255) NOT NULL,
-			stats_data VARCHAR (255));
+			FOREIGN KEY(order_id) REFERENCES metadata(order_id),
+			hp INT NOT NULL,
+			attack INT NOT NULL,
+			defense INT NOT NULL,
+			special_attack INT NOT NULL,
+			special_defense INT NOT NULL,
+			speed INT NOT NULL);
+	
 
 CREATE TABLE sprites(
 			name VARCHAR (255),
 			order_id INT NOT NULL,
-			FOREIGN KEY(order_id) REFERENCES nameid(order_id),
-			sprites_male VARCHAR (255),
-			sprites_female VARCHAR(255));
+			FOREIGN KEY(order_id) REFERENCES metadata(order_id),
+			sprites_default VARCHAR (255) NOT NULL,
+			sprites_shiny VARCHAR(255));
 
 -- IMPORT CSV FILES IN THE ORDER OF TABLES CREATED
-
-SELECT * FROM nameid;
 
 SELECT * FROM metadata;
 
