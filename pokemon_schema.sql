@@ -12,7 +12,8 @@ CREATE TABLE metadata (
 			name VARCHAR (255) NOT NULL,
 			order_id INT PRIMARY KEY,
 			weight INT,
-			type_1 VARCHAR (255) NOT NULL);
+			type_1 VARCHAR (255) NOT NULL,
+			type_2 VARCHAR (255));
 
 CREATE TABLE statistics(
 			name VARCHAR (255),
