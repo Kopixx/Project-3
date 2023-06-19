@@ -4,9 +4,10 @@
 
 -- Change connection to pokemon_db
 
-DROP TABLE IF EXISTS metadata;
-DROP TABLE IF EXISTS statistics;
 DROP TABLE IF EXISTS sprites;
+DROP TABLE IF EXISTS statistics;
+DROP TABLE IF EXISTS metadata;
+
 
 CREATE TABLE metadata (
 			name VARCHAR (255) NOT NULL,
@@ -17,8 +18,7 @@ CREATE TABLE metadata (
 
 CREATE TABLE statistics(
 			name VARCHAR (255),
-			order_id INT NOT NULL,
-			FOREIGN KEY(order_id) REFERENCES metadata(order_id),
+			order_id INT PRIMARY KEY,
 			hp INT NOT NULL,
 			attack INT NOT NULL,
 			defense INT NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE statistics(
 
 CREATE TABLE sprites(
 			name VARCHAR (255),
-			order_id INT NOT NULL,
+			order_id INT PRIMARY KEY, 
 			FOREIGN KEY(order_id) REFERENCES metadata(order_id),
 			sprites_default VARCHAR (255) NOT NULL,
 			sprites_shiny VARCHAR(255));
