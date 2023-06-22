@@ -43,11 +43,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html", pages = {
-        "summary": "active"})
-    # return (
-    #     f"Available Routes:<br/>"
-    #     f"/api/summary")
+    return render_template("index.html")
+    #  return (
+    #      f"Available Routes:<br/>"
+    #      f"/api/summary")
 
 @app.route("/api/summary")
 def summary():
