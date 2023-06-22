@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pokemon Statistics Dashboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
@@ -14,8 +15,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1>Pokemon Interactive Stats Dashboard</h1>
-        <p>Use the interactive charts below to explore the stats of your favourite pokemon!</p>
+        <div id="title-page">
+          <h1>Pokemon Interactive Stats Dashboard</h1>
+        </div>
+        <div id="subtitles-page">
+          <p>Use the interactive charts below to explore the stats of your favourite pokemon!</p>
+          <p>Gotta Catch 'em All!</p>  
+        </div>
       </div>
     </div>
     <div class="row">
@@ -59,7 +65,10 @@
       </div>
       <div class="col-md-12">
         <div id="type-chart"></div>
-        <h5 style="text-align: center">0 = No Effect --- 0.5 = x1/2 Damage --- 1.0 = x1 Damage --- 2.0 = x2 Damage</h5>
+        <div id="type-chart-description">
+          <h5 style="text-align: center">How effective is your pokemon when attacking other opponents?</h5>
+          <h5 style="text-align: center">0 = No Effect /// 0.5 = x1/2 Damage /// 1.0 = x1 Damage /// 2.0 = x2 Damage</h5>
+        </div>
       </div>
     </div>
   </div>
