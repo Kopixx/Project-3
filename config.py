@@ -1,7 +1,7 @@
 # pgAdmin4 password
         
 user =  "postgres"
-password = "password"
+password = "POSTGRES"
 host = "localhost"
 port = "5432"
 db_name = "pokemon_db"
