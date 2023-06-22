@@ -1,6 +1,17 @@
 // Save the API URL
 let allUrl = "http://127.0.0.1:5000/api/summary"
 
+ScrollReveal().reveal('#title-page');
+ScrollReveal().reveal('#subtitles-page', {delay: 200});
+ScrollReveal().reveal('.well', {delay: 400});
+ScrollReveal().reveal('#sprite', {delay: 500});
+ScrollReveal().reveal('.dropdown', {delay: 500});
+ScrollReveal().reveal('.panel-primary', {delay: 700});
+ScrollReveal().reveal('#radar', {delay: 900});
+ScrollReveal().reveal('#boxplot', {delay: 1500});
+ScrollReveal().reveal('#type-chart', {delay: 2000});
+ScrollReveal().reveal('#type-chart-description', {delay: 2000});
+
 // API call for default appearance
 d3.json(allUrl).then(function(data) {
     console.log(data);
@@ -319,7 +330,8 @@ function buildBoxplotChart(pokemon, data, sampleStatsClean) {
         jitter: 0.3,
         pointpos: 0,
         type: 'box',
-        name: 'Attack'
+        name: 'Attack',
+        marker: {color: '#47D2C1'}
     },
     {
         y: ['Attack'],
@@ -449,9 +461,9 @@ function buildTypeChart(pokemon, data) {
 
     let colorscaleValues = [
         [0, '#000000'],
-        [0.25, '#FF0000'],
+        [0.25, '#C70039'],
         [0.5, '#FFFFFF'],
-        [1, '#00FF00']
+        [1, '#8BE63D']
     ];
 
     let yValuesFiltered = [];
@@ -482,7 +494,7 @@ function buildTypeChart(pokemon, data) {
     }];
 
     let layoutHeatmap = {
-        title: 'Type Damage Chart',
+        title: 'Effectiveness of Attacks (upon Opponents per Type)',
         annotations: [],
         xaxis: {
           ticks: '',
